@@ -30,14 +30,14 @@ else
 fi
 if [ -z "$3" ]
 then
-	masterIP="129.114.108.146"
+	masterIP="10.40.1.5"
 else
 	masterIP="$3"
 fi
 
 SSH_CMD="ssh -i $keyfile"
 
-./install_tensorflow.sh &
+./install_tensorflow.sh
 for server in $slavesIP; do
 		$SSH_CMD $username@$server 'bash -s' < ./install_tensorflow.sh &
 done	
