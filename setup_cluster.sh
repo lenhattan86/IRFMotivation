@@ -37,8 +37,8 @@ fi
 
 SSH_CMD="ssh -i $keyfile"
 
-./install_tensorflow.sh
+./install_tensorflow.sh &
 for server in $slavesIP; do
-		$SSH_CMD $username@$server 'bash -s' < ./install_tensorflow.sh &
+  $SSH_CMD $username@$server 'bash -s' < ./install_tensorflow.sh &
 done	
 wait
