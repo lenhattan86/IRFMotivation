@@ -1,109 +1,14 @@
-2017-09-04 10:17:43.877820: I tensorflow/core/common_runtime/gpu/gpu_device.cc:887] Found device 0 with properties: 
+2017-09-04 11:03:07.121261: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-09-04 11:03:07.121298: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-09-04 11:03:07.121304: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-09-04 11:03:07.121309: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-09-04 11:03:07.121313: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2017-09-04 11:03:07.282670: I tensorflow/core/common_runtime/gpu/gpu_device.cc:955] Found device 0 with properties: 
 name: Quadro K620
 major: 5 minor: 0 memoryClockRate (GHz) 1.124
 pciBusID 0000:03:00.0
 Total memory: 1.95GiB
-Free memory: 1.13GiB
-2017-09-04 10:17:43.877880: I tensorflow/core/common_runtime/gpu/gpu_device.cc:908] DMA: 0 
-2017-09-04 10:17:43.877894: I tensorflow/core/common_runtime/gpu/gpu_device.cc:918] 0:   Y 
-2017-09-04 10:17:43.877907: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Quadro K620, pci bus id: 0000:03:00.0)
-2017-09-04 10:17:43.894058: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894102: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894114: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894123: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894131: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894140: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894148: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894156: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894163: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894173: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894181: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894189: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894197: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894205: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894213: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894221: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894232: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894247: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894256: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894264: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894272: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894280: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894288: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894296: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894304: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894321: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894330: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894338: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894346: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894354: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894362: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894370: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894378: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894385: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894393: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894401: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894409: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894416: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894424: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894432: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894440: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894448: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894456: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894465: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894473: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894481: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894489: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894497: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894505: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894513: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894521: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894529: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894537: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894545: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894557: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894565: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894573: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894583: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894591: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894599: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894607: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894615: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894623: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894630: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894638: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894646: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894654: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894662: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894670: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894677: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894685: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894693: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894702: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894709: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894717: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894725: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894733: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894741: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894749: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894757: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894765: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894774: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894786: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894794: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894803: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894811: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894820: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894828: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894836: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894845: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894853: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894861: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894870: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894879: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894887: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894895: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894904: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894912: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894921: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
-2017-09-04 10:17:43.894940: I tensorflow/core/common_runtime/simple_placer.cc:49] FilterSupportedDevices:/job:localhost/replica:0/task:0/gpu:0
+Free memory: 1.02GiB
+2017-09-04 11:03:07.282702: I tensorflow/core/common_runtime/gpu/gpu_device.cc:976] DMA: 0 
+2017-09-04 11:03:07.282708: I tensorflow/core/common_runtime/gpu/gpu_device.cc:986] 0:   Y 
+2017-09-04 11:03:07.282716: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Quadro K620, pci bus id: 0000:03:00.0)
