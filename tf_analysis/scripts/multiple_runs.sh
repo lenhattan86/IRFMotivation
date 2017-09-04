@@ -13,7 +13,6 @@ then
 else
   tf_file=$2
 fi
-source /home/tanle/tensorflow/bin/activate
 >&2 echo "Running $num_parrallel applications in parallel..."  
 for i in `seq 1 $num_parrallel`;
 do
