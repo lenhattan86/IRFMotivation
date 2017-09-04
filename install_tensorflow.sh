@@ -23,7 +23,7 @@ rm -rf cuda
 # cudnn version 6
 wget https://www.dropbox.com/s/56tkkrs2pqyrauv/libcudnn6_6.0.21-1%2Bcuda8.0_amd64.deb
 sudo dpkg -i libcudnn6_6.0.21-1+cuda8.0_amd64.deb
-sudo rm libcudnn6_6.0.21-1+cuda8.0_amd64.deb
+rm libcudnn6_6.0.21-1+cuda8.0_amd64.deb
 echo "######################### CUPTI-DEV ##########################################"
 wget https://www.dropbox.com/s/n683yo6vrb9ip5r/cuptiruntime.deb
 wget https://www.dropbox.com/s/g644z0kgcsdvra1/cuptidevlib.deb

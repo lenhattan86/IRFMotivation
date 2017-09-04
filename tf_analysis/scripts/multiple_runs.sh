@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-ACTIVATE_TENSORFLOW="source /home/tanle/tensorflow/bin/activate"
-
 if [ -z "$1" ]
 then
   num_parrallel=1
