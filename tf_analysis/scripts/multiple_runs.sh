@@ -9,7 +9,7 @@ fi
 
 if [ -z "$2" ]
 then
-  tf_file="linear_regression.py"
+  tf_file="../benchmarks/linear_regression.py"
 else
   tf_file=$2
 fi
