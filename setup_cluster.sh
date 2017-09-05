@@ -35,7 +35,7 @@ else
 	masterIP="$3"
 fi
 
-SSH_CMD="ssh -i $keyfile"
+SSH_CMD="ssh -i -o \"StrictHostKeyChecking no\" $keyfile"
 
 ./install_tensorflow.sh &
 for server in $slavesIP; do
