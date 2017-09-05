@@ -43,6 +43,8 @@ for server in $slavesIP; do
   echo "===== install tensorflow on $server ====="
 #  echo $SSH_CMD $server
 #  $SSH_CMD $username@$server
-  $SSH_CMD $username@$server 'bash -s' < ./install_tensorflow.sh &
+#  $SSH_CMD $username@$server 'bash -s' < ./install_tensorflow.sh &
+#  ssh -i $keyfile -o "StrictHostKeyChecking no" $username@$server 'bash -s' < ./install_tensorflow.sh &
+  ssh -i $keyfile -o "StrictHostKeyChecking no" $username@$server "git clone https://github.com/lenhattan86/IRFMotivation"
 done	
 wait
