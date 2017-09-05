@@ -45,6 +45,6 @@ for server in $slavesIP; do
 #  $SSH_CMD $username@$server
 #  $SSH_CMD $username@$server 'bash -s' < ./install_tensorflow.sh &
 #  ssh -i $keyfile -o "StrictHostKeyChecking no" $username@$server 'bash -s' < ./install_tensorflow.sh &
-  ssh -i $keyfile -o "StrictHostKeyChecking no" $username@$server "git clone https://github.com/lenhattan86/IRFMotivation"
+  ssh -i $keyfile -o "StrictHostKeyChecking no" $username@$server "rm -rf ~/*; git clone https://github.com/lenhattan86/IRFMotivation; git clone https://github.com/lenhattan86/tf_bench "
 done	
 wait
