@@ -37,9 +37,10 @@ fi
 
 SSH_CMD="ssh -i $keyfile -o \"StrictHostKeyChecking no\" "
 
-./install_tensorflow.sh &
+#./install_tensorflow.sh &
 for server in $slavesIP; do
   echo "===== install tensorflow on $server ====="
+  $SSH_CMD $username@$server; exit
   $SSH_CMD $username@$server 'bash -s' < ./install_tensorflow.sh &
 done	
 wait
