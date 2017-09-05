@@ -41,8 +41,8 @@ SSH_CMD="ssh -i $keyfile "
 #./install_tensorflow.sh &
 for server in $slavesIP; do
   echo "===== install tensorflow on $server ====="
-  echo $SSH_CMD $server
-  $SSH_CMD $username@$server
+#  echo $SSH_CMD $server
+#  $SSH_CMD $username@$server
   $SSH_CMD $username@$server 'bash -s' < ./install_tensorflow.sh &
 done	
 wait
