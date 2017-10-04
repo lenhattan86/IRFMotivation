@@ -13,7 +13,7 @@ echo "This file need to be executed on the master node instead of your local mac
 echo "You also need to provide the chameleon.pem file"
 
 master="p100";
-masterIP="10.40.1.189";
+masterIP="129.114.108.146";
 slaves="gpu-1 gpu-2 gpu-3";
 slavesIP="10.40.1.207 10.40.1.202 10.40.1.200";
 servers="$master $slaves";
@@ -27,7 +27,7 @@ else
 fi
 if [ -z "$2" ]
 then
-	keyfile=~/chameleon.pem
+	keyfile=chameleon.pem
 else
 	keyfile="$2"
 fi
@@ -41,10 +41,10 @@ fi
 SSH_CMD="ssh -i $keyfile"
 
 # setup kubernetes
+chmod 600 $keyfile
 ./setupkubernetes.sh &
 for server in $slavesIP; do
 		$SSH_CMD $username@$server 'bash -s' < ./setupkubernetes.sh &
-		$SSH_CMD $username@$server 'sudo reboot'
 done	
 wait
 
