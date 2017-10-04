@@ -44,6 +44,8 @@ for server in $slavesIP; do
 		$SSH_CMD $username@$server "echo hello $slavesIP"
 done	
 
+sleep 40
+
 # setup kubernetes
 chmod 600 $keyfile
 ./setupkubernetes.sh &
