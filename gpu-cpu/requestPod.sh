@@ -1,0 +1,1 @@
+kubectl create -f linear_regression_large.yaml
