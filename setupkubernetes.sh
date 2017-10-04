@@ -57,4 +57,5 @@ sudo kubeadm reset
 echo "######################### Clean-up ##########################################"
 sudo rm -rf *.tgz *.deb
 echo "######################### DOCKER-PULL ##########################################"
-docker pull swiftdiaries/bench
+sudo docker pull swiftdiaries/bench
+echo "######################### You should reboot ##########################################"

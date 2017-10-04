@@ -44,11 +44,13 @@ SSH_CMD="ssh -i $keyfile"
 ./setupkubernetes.sh &
 for server in $slavesIP; do
 		$SSH_CMD $username@$server 'bash -s' < ./setupkubernetes.sh &
+		$SSH_CMD $username@$server 'sudo reboot'
 done	
 wait
 
 # configure kubernetes master
 #$SSH_CMD $username@$master 'bash -s' < ./masterkubeup.sh $masterIP
+
 ./masterkubeup.sh $masterIP
 echo "Enter Token :"
 read token
