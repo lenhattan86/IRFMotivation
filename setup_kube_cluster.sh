@@ -57,7 +57,7 @@ wait
 # configure kubernetes master
 #$SSH_CMD $username@$master 'bash -s' < ./masterkubeup.sh $masterIP
 
-sudo echo "127.0.0.1 $master" >> /etc/hosts
+sudo sh -c "echo '127.0.0.1 $master' >> /etc/hosts"
 ./masterkubeup.sh $masterIP
 echo "Enter Token :"
 read token
