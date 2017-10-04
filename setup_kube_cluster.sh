@@ -40,14 +40,14 @@ fi
 
 SSH_CMD="ssh -i $keyfile"
 
+chmod 600 $keyfile
+
+echo "please enter yes to connect to slaves"
 for server in $slavesIP; do
 		$SSH_CMD $username@$server "echo hello $slavesIP" -y
 done	
 
-sleep 40
-
 # setup kubernetes
-chmod 600 $keyfile
 ./setupkubernetes.sh &
 for server in $slavesIP; do
 		$SSH_CMD $username@$server 'bash -s' < ./setupkubernetes.sh &
