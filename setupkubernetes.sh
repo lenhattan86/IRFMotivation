@@ -2,8 +2,8 @@
 #usage: ./setupkubernetes.sh
 echo "################################# Install nvidia-375 ######################################"
 sudo apt-get install -y software-properties-common
-sudo add-apt-repository ppa:graphics-drivers
-sudo apt-get update
+sudo add-apt-repository ppa:graphics-drivers -y
+sudo apt-get update -y
 sudo apt install -y nvidia-375
 echo "######################### CUDA, CuDNN ##########################################"
 sudo apt-get install -y linux-headers-$(uname -r)
@@ -27,7 +27,7 @@ wget https://www.dropbox.com/s/uoxd92ecc9dwbmt/cuptidoclib.deb
 sudo dpkg -i cuptiruntime.deb
 sudo dpkg -i cuptidevlib.deb
 sudo dpkg -i cuptidoclib.deb
-sudo apt-get update
+sudo apt-get update -y
 sudo apt-get install -y libcupti-dev
 sudo rm *.deb
 echo "######################### DOCKER ##########################################"
