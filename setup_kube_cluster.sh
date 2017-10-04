@@ -62,6 +62,11 @@ sudo sh -c "echo '127.0.0.1 $master' >> /etc/hosts"
 echo "Enter Token :"
 read token
 # configure kubernetes slave
+i=0
 for server in $slavesIP; do
+    i=$((i+1))
+    slave=${slaves[$i]}
+    echo $slave
+#    $SSH_CMD $username@$server "sudo sh -c \"echo '127.0.0.1 $slave' >> /etc/hosts\""
 		$SSH_CMD $username@$server 'bash -s' < ./slavejoin.sh $token $masterIP
 done
