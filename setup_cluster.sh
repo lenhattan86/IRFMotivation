@@ -16,7 +16,7 @@ slavesIP="10.40.1.48 10.40.1.49 10.40.1.56 10.40.1.55 10.40.1.54 10.40.1.57 10.4
 servers="$master $slaves";
 serversIP="$masterIP $slavesIP";
 
-if [ -z "$1" ]
+if [ -z "$1" ]56.4
 then
 	username="cc"
 else
