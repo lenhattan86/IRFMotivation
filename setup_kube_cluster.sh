@@ -40,6 +40,10 @@ fi
 
 SSH_CMD="ssh -i $keyfile"
 
+for server in $slavesIP; do
+		$SSH_CMD $username@$server "echo hello $slavesIP"
+done	
+
 # setup kubernetes
 chmod 600 $keyfile
 ./setupkubernetes.sh &
