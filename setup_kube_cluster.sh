@@ -41,7 +41,7 @@ fi
 SSH_CMD="ssh -i $keyfile"
 
 for server in $slavesIP; do
-		$SSH_CMD $username@$server "echo hello $slavesIP"
+		$SSH_CMD $username@$server "echo hello $slavesIP" -y
 done	
 
 sleep 40
