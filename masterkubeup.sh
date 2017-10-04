@@ -7,6 +7,7 @@ then
 else
 	ipaddress="$1"
 fi
+
 sudo kubeadm reset
 sudo systemctl enable docker
 sudo systemctl start docker
