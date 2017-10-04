@@ -14,8 +14,8 @@ echo "You also need to provide the chameleon.pem file"
 
 master="p100";
 masterIP="10.40.1.189";
-slaves="gpu-1 gpu-2 gpu-3 gpu-4";
-slavesIP="";
+slaves="gpu-1 gpu-2 gpu-3";
+slavesIP="10.40.1.207 10.40.1.202 10.40.1.200";
 servers="$master $slaves";
 serversIP="$masterIP $slavesIP";
 
