@@ -42,5 +42,4 @@ spec:
     - name: libcuda-so-1
       mountPath: /usr/lib/x86_64-linux-gnu/libcuda.so.1
     - name: libcuda-so-375-82
-      mountPath: /usr/lib/x86_64-linux-gnu/libcuda.so.375.82     
-  
+      mountPath: /usr/lib/x86_64-linux-gnu/libcuda.so.375.82

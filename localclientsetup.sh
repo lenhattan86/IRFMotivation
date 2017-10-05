@@ -27,7 +27,8 @@ deb http://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 apt-get update"
 sudo apt-get remove -y kubelet kubeadm kubectl kubernetes-cni
-sudo apt-get install -y kubelet kubeadm kubectl kubernetes-cni
+#sudo apt-get install -y kubelet kubeadm kubectl kubernetes-cni
+sudo apt-get install -y kubectl
 #brew install kubectl
 #mkdir -p  ~/.kube/admin.conf
 #echo "ssh -i $keyfile $username@$hostIP \"echo hello $hostIP\""
@@ -40,4 +41,6 @@ echo "######################### Dashboard is now installed, you can run \$kubect
 #sudo systemctl daemon-reload
 #sudo systemctl restart kubelet
 # if it does not work, try export KUBECONFIG=~/.kube/admin.conf; Check $kubectl version
+
+# kubectl proxy --api-prefix=/k8s-api
 
