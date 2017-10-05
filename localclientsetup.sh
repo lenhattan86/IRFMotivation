@@ -26,14 +26,16 @@ cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
 deb http://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 apt-get update"
-sudo apt-get install -y kubectl
+sudo apt-get remove -y kubelet kubeadm kubectl kubernetes-cni
+sudo apt-get install -y kubelet kubeadm kubectl kubernetes-cni
 #brew install kubectl
 #mkdir -p  ~/.kube/admin.conf
 #echo "ssh -i $keyfile $username@$hostIP \"echo hello $hostIP\""
 ssh -i $keyfile $username@$hostIP "echo hello $hostIP"
 scp -i $keyfile $username@$hostIP:~/config/admin.conf ~/.kube/admin.conf
 export KUBECONFIG=~/.kube/admin.conf
-kubectl create -f https://git.io/kube-dashboard
+kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+#export KUBECONFIG=~/.kube/admin.conf
 echo "######################### Dashboard is now installed, you can run \$kubectl proxy to view the Dashboard ##########################################"
 #sudo systemctl daemon-reload
 #sudo systemctl restart kubelet
