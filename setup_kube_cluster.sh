@@ -15,7 +15,7 @@ echo "You also need to provide the chameleon.pem file"
 master="p-100";
 masterIP="129.114.109.88";
 slaves="";
-slavesIP=";
+slavesIP="";
 servers="$master $slaves";
 serversIP="$masterIP $slavesIP";
 
