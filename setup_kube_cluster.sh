@@ -12,7 +12,7 @@
 echo "This file need to be executed on the master node instead of your local machine for chameleon"
 echo "You also need to provide the chameleon.pem file"
 
-master="p100";
+master="gpus-1";
 masterIP="129.114.109.88";
 slaves="gpu-2 gpu-3 gpu-4";
 slavesIP="10.40.1.49 10.40.1.48 10.40.1.47";
