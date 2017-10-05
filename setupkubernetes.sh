@@ -47,8 +47,8 @@ EOF
 apt-get update'
 sudo apt-get install -y kubelet kubeadm kubectl kubernetes-cni
 echo "######################### NVIDIA-DOCKER ##########################################"
-wget https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
-sudo apt-get install -f
+#wget https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
+#sudo apt-get install -f
 echo "######################### PATH ##########################################"
 export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
@@ -57,4 +57,4 @@ sudo kubeadm reset
 echo "######################### Clean-up ##########################################"
 sudo rm -rf *.tgz *.deb
 echo "######################### DOCKER-PULL ##########################################"
-sudo docker pull swiftdiaries/bench
+#sudo docker pull swiftdiaries/bench
