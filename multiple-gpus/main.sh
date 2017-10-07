@@ -9,10 +9,16 @@ then
   done	
 fi
 
-numberOfJobs=100
+if [ -z "$1" ]
+then
+  numberOfJobs=3
+else
+  numberOfJobs=$1
+fi
 #FULL_COMMAND="kubectl --namespace=\"user1\" create -f ./jobs/vgg-gpu-job.yaml"
 
-job="vgg16"
+#job="vgg16"
+job="alexnet"
 jobName="$job-gpu-job"
 
 for i in `seq 1 $numberOfJobs`;
@@ -33,10 +39,10 @@ spec:
     resources:
       requests:
         alpha.kubernetes.io/nvidia-gpu: 1
-        cpu: 24
+        cpu: 1
       limits:
         alpha.kubernetes.io/nvidia-gpu: 1
-        cpu: 24
+        cpu: 1
     volumeMounts:
     - name: nvidia-driver-375-82
       mountPath: /usr/local/nvidia
@@ -66,7 +72,7 @@ spec:
     
     FULL_COMMAND="kubectl create -f ./jobs/$jobName$i.yaml"        
     >&2 echo "Starting job $i."
-	  (TIMEFORMAT='%R'; time $FULL_COMMAND 2>application$i.log) 2> $i.time &
+	  (TIMEFORMAT='%R'; time $FULL_COMMAND 2>./logs/application$i.log) 2> ./time/$i.time &
 done
 wait
 

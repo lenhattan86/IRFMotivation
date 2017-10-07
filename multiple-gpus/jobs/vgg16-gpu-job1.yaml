@@ -13,10 +13,10 @@ spec:
     resources:
       requests:
         alpha.kubernetes.io/nvidia-gpu: 1
-        cpu: 24
+        cpu: 1
       limits:
         alpha.kubernetes.io/nvidia-gpu: 1
-        cpu: 24
+        cpu: 1
     volumeMounts:
     - name: nvidia-driver-375-82
       mountPath: /usr/local/nvidia

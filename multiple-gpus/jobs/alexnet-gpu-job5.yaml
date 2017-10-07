@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: tensorflow-vgg16-gpu2
+  name: tensorflow-alexnet-gpu5
 spec:
   containers:
-  - name: tensorflow-vgg16-gpu
+  - name: tensorflow-alexnet-gpu
     image: swiftdiaries/bench
     command:
     - "/bin/bash"
     - "-c"
-    - "python tf_cnn_benchmarks.py --device=gpu --model=vgg16 --batch_size=32 --num_gpus=1"  
+    - "python tf_cnn_benchmarks.py --device=gpu --model=alexnet --batch_size=32 --num_gpus=1"  
     resources:
       requests:
         alpha.kubernetes.io/nvidia-gpu: 1

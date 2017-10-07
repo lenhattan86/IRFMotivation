@@ -13,7 +13,7 @@ while $isTiming; do
   kubectl get pods --show-all > $tempFile
   null="NULL"
   while read line; do
-    echo $line
+#    echo $line
     null=$line
     read -a arr <<< $line   
    
