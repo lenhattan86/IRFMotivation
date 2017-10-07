@@ -35,7 +35,7 @@ spec:
     command:
     - \"/bin/bash\"
     - \"-c\"
-    - \"python tf_cnn_benchmarks.py --device=gpu --model=$job --batch_size=32 --num_gpus=1\"  
+    - \"python tf_cnn_benchmarks.py --device=gpu --model=$job --data_format=NHWC --batch_size=32 --num_gpus=1\"  
     resources:
       requests:
         alpha.kubernetes.io/nvidia-gpu: 1
