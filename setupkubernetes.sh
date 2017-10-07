@@ -7,9 +7,13 @@ sudo apt-get update -y
 sudo apt install -y nvidia-375
 echo "######################### CUDA, CuDNN ##########################################"
 sudo apt-get install -y linux-headers-$(uname -r)
-wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb
-mv cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb  cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb
-sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb
+#cudaFile="cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64-deb"
+cudaFile="cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb"
+cudaDeb="$cudaFile.deb"
+#wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb
+wget https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/$cudaFile
+mv $cudaFile  $cudaDeb
+sudo dpkg -i $cudaDeb
 sudo apt-get update
 sudo apt-get install -y cuda
 export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
@@ -20,6 +24,8 @@ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 sudo rm cudnn-8.0-linux-x64-v6.0.tgz
+
+#sudo apt install nvidia-cuda-toolkit
 echo "######################### CUPTI-DEV ##########################################"
 wget https://www.dropbox.com/s/n683yo6vrb9ip5r/cuptiruntime.deb
 wget https://www.dropbox.com/s/g644z0kgcsdvra1/cuptidevlib.deb
@@ -49,6 +55,16 @@ sudo apt-get install -y kubelet kubeadm kubectl kubernetes-cni
 echo "######################### NVIDIA-DOCKER ##########################################"
 #wget https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
 #sudo apt-get install -f
+#wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
+#sudo dpkg -i /tmp/nvidia-docker*.deb && rm /tmp/nvidia-docker*.deb
+#sudo apt-get install -f
+# install from sources instead.
+git clone https://github.com/NVIDIA/nvidia-docker
+make deb
+cd dists
+sudo dpkg -i nvidia-docker_1.0.1-1_amd64.deb
+sudo apt-get install -f
+cd ..
 echo "######################### PATH ##########################################"
 export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
@@ -57,4 +73,4 @@ sudo kubeadm reset
 echo "######################### Clean-up ##########################################"
 sudo rm -rf *.tgz *.deb
 echo "######################### DOCKER-PULL ##########################################"
-#sudo docker pull swiftdiaries/bench
+sudo docker pull swiftdiaries/bench

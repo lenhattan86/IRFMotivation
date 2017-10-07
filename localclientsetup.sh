@@ -36,11 +36,22 @@ ssh -i $keyfile $username@$hostIP "echo hello $hostIP"
 scp -i $keyfile $username@$hostIP:~/config/admin.conf ~/.kube/admin.conf
 export KUBECONFIG=~/.kube/admin.conf
 kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
-#export KUBECONFIG=~/.kube/admin.conf
+echo 'export KUBECONFIG=~/.kube/admin.conf' >> ~/.bashrc
 echo "######################### Dashboard is now installed, you can run \$kubectl proxy to view the Dashboard ##########################################"
 #sudo systemctl daemon-reload
 #sudo systemctl restart kubelet
 # if it does not work, try export KUBECONFIG=~/.kube/admin.conf; Check $kubectl version
 
 # kubectl proxy --api-prefix=/k8s-api
+### NOTEs
+# dashboard does not work.
+#https://github.com/kubernetes/dashboard/issues/971
+
+## delete Kubernetes dashboard
+#kubectl delete serviceaccounts -n kube-system kubernetes-dashboard
+#kubectl delete secrets -n kube-system kubernetes-dashboard-certs
+#kubectl delete services -n kube-system kubernetes-dashboard
+# kubectl delete deployments.extensions -n kube-system kubernetes-dashboard
+#kubectl delete rolebindings.rbac.authorization.k8s.io -n kube-system kubernetes-dashboard-minimal
+#kubectl delete roles.rbac.authorization.k8s.io -n kube-system kubernetes-dashboard-minima
 
