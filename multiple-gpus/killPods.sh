@@ -10,16 +10,13 @@ isTiming=true
 noResource="No resources found."
 
 while $isTiming; do  
-  kubectl get pods --show-all > $tempFile
+  kubectl get pods --show-all > $tempFile 
   null="NULL"
   while read line; do
-#    echo $line
     null=$line
-    read -a arr <<< $line   
-   
+    read -a arr <<< $line      
     podName=${arr[0]}
-    podStatus=${arr[2]}
-    
+    podStatus=${arr[2]}    
     if [ "$podStatus" == "$COMPLETED" ] || [ "$podStatus" == "$ERROR" ]
     then
       echo "delete $podName"
