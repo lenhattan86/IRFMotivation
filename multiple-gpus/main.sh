@@ -9,7 +9,7 @@ then
   done	
 fi
 
-numberOfJobs=1
+numberOfJobs=100
 #FULL_COMMAND="kubectl --namespace=\"user1\" create -f ./jobs/vgg-gpu-job.yaml"
 
 job="vgg16"
