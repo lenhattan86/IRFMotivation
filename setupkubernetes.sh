@@ -53,18 +53,22 @@ EOF
 apt-get update'
 sudo apt-get install -y kubelet kubeadm kubectl kubernetes-cni
 echo "######################### NVIDIA-DOCKER ##########################################"
-#wget https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
-#sudo apt-get install -f
+wget https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
+sudo dpkg -i nvidia-docker_1.0.1-1_amd64.deb
+sudo apt-get install -f
 #wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
 #sudo dpkg -i /tmp/nvidia-docker*.deb && rm /tmp/nvidia-docker*.deb
 #sudo apt-get install -f
 # install from sources instead.
-git clone https://github.com/NVIDIA/nvidia-docker
-make deb
-cd dists
-sudo dpkg -i nvidia-docker_1.0.1-1_amd64.deb
-sudo apt-get install -f
-cd ..
+#git clone https://github.com/NVIDIA/nvidia-docker
+#make deb
+#cd dist
+#sudo dpkg -i nvidia-docker_1.0.1-1_amd64.deb
+#sudo apt-get install -f
+#rm -rf nvidia-docker
+#cd ..
+# test nvidia-docker: sudo nvidia-docker-plugin
+#apt-get install nvidia-modprobe
 echo "######################### PATH ##########################################"
 export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"

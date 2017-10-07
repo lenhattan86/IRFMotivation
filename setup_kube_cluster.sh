@@ -14,8 +14,10 @@ echo "You also need to provide the chameleon.pem file"
 
 master="p-100";
 masterIP="129.114.109.88";
-slaves="";
-slavesIP="";
+#slavesIP="10.40.0.152";
+slavesIP="10.40.0.151 10.40.0.152";
+#slavesIP="10.40.0.149 10.40.0.151 10.40.0.152";
+#slavesIP="10.40.0.148 10.40.0.149 10.40.0.151 10.40.0.152";
 servers="$master $slaves";
 serversIP="$masterIP $slavesIP";
 
@@ -61,6 +63,7 @@ sudo sh -c "echo '127.0.0.1 $master' >> /etc/hosts"
 ./masterkubeup.sh $masterIP
 echo "Enter Token :"
 read token
+# 5edc7b.06d65a3308f532d5
 # configure kubernetes slave
 # i=0
 for server in $slavesIP; do
