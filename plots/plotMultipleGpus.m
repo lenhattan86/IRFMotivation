@@ -13,7 +13,7 @@ legendSize = [1 1 4/5 1] .* legendSize;
 
 %%
 if plots(1)       
-    avgCompTimes = [7825 100 50 25]/60;
+    avgCompTimes = [7825 3912 2608 1956]/60;
     gpus = [2 4 6 8];
     figure;
 %   title([method '- CPUs'],'fontsize',fontLegend);      
