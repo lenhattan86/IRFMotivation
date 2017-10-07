@@ -17,8 +17,8 @@ else
 fi
 #FULL_COMMAND="kubectl --namespace=\"user1\" create -f ./jobs/vgg-gpu-job.yaml"
 
-#job="vgg16"
-job="alexnet"
+job="vgg16"
+#job="alexnet"
 jobName="$job-gpu-job"
 
 for i in `seq 1 $numberOfJobs`;
