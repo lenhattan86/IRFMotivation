@@ -35,14 +35,16 @@ spec:
     command:
     - \"/bin/bash\"
     - \"-c\"
-    - \"python tf_cnn_benchmarks.py --device=gpu --model=$job --data_format=NHWC --batch_size=32 --num_gpus=1\"  
+    - \"python tf_cnn_benchmarks.py --device=gpu --model=$job --data_format=NHWC --batch_size=32 --num_gpus=1 --gpu_mem_fraction=1.0\"  
     resources:
       requests:
         alpha.kubernetes.io/nvidia-gpu: 1
         cpu: 1
+        memory: 16Gi
       limits:
         alpha.kubernetes.io/nvidia-gpu: 1
         cpu: 1
+        memory: 16Gi
     volumeMounts:
     - name: nvidia-driver-375-82
       mountPath: /usr/local/nvidia
