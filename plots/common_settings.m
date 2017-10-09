@@ -59,7 +59,10 @@ strFactorImprove = 'factor of improvement';
 strAvgComplTime = 'avg. compl. (secs)';
 
 strGpus = 'GPUs';
+strCpuCores = 'CPU cores';
 strMakepan = 'makespan (mins)';
+strGpuMem = 'GPU memory fraction';
+strComplTime = 'compl. time (seconds)';
 
 %% line specs
 lineProposed = '-';

@@ -9,7 +9,7 @@ spec:
     command:
     - "/bin/bash"
     - "-c"
-    - "python tf_cnn_benchmarks.py --device=gpu --model=vgg16 --batch_size=32 --num_gpus=1"  
+    - "python tf_cnn_benchmarks.py --device=gpu --model=vgg16 --batch_size=32 --data_format=NHWC --num_gpus=1 --gpu_mem_fraction=0.1"  
     resources:
       requests:
         alpha.kubernetes.io/nvidia-gpu: 1
