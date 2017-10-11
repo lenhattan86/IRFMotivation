@@ -36,7 +36,7 @@ ssh -i $keyfile $username@$hostIP "echo hello $hostIP"
 scp -i $keyfile $username@$hostIP:~/config/admin.conf ~/.kube/admin.conf
 export KUBECONFIG=~/.kube/admin.conf
 kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
-echo 'export KUBECONFIG=~/.kube/admin.conf' >> ~/.bashrc
+#echo 'export KUBECONFIG=~/.kube/admin.conf' >> ~/.bashrc
 echo "######################### Dashboard is now installed, you can run \$kubectl proxy to view the Dashboard ##########################################"
 #sudo systemctl daemon-reload
 #sudo systemctl restart kubelet

@@ -6,7 +6,7 @@ yScale = 10;
 
 fig_path = ['../../IRF/figs/'];
 
-plots = [true true true];
+plots = [true true true true];
 
 figureSize = [1 1 4/5 4/5].* figSizeOneCol;
 legendSize = [1 1 4/5 1] .* legendSize;
@@ -69,10 +69,19 @@ if plots(3)
   % job ~ 27 secs
   % container&pod: 10 secs
   % Tensorflow initialization: 1.5 mins
+    % Alexnet
+    % - batch size = ? from Adhita
     %avgCompTimes = [5.51503396034 5.26602911949 2.25541186333];
     % gpus = [0.1 0.5 1.0]; % 0.1 : out of memory
-    avgCompTimes = [27.0777139664 27.3565981388 27.3496148586 27.34]; 
-    gpus = [0.3 0.5 0.8 1.0]; % 0.1 : out of memory
+    % - batch size = 8 => compl. time stays constant (1.5 seconds)
+    % - batch size = 128
+%     gpus = [0.2 0.4 1.0]; avgCompTimes = [5.51503396034 5.26602911949 6.01745986938];
+    
+        
+    % VGG16
+    avgCompTimes = [27.0777139664 27.3565981388 27.3496148586 27.34]; gpus = [0.3 0.5 0.8 1.0];  % VGG16, batch size = 32
+%     avgCompTimes = [9.9 9.77 9.98 10.036];  gpus = [0.3 0.5 0.8 1.0]; % 0.1 : out of memory
+    
     figure;
 %   title([method '- CPUs'],'fontsize',fontLegend);      
     yScale = 1;
@@ -86,6 +95,29 @@ if plots(3)
     if is_printed   
       figIdx=figIdx +1;
       fileNames{figIdx} = ['gpuMemoryFraction'];        
+      epsFile = [ LOCAL_FIG fileNames{figIdx} '.eps'];
+      print ('-depsc', epsFile);
+    end
+end
+
+
+if plots(4)
+    % VGG16: batch size = 16
+    avgCompTimes = [15.05 33.04 48.06 59.45];  numJobs = [1 2 3 4]; % 0.1 : out of memory
+    
+    figure;
+%   title([method '- CPUs'],'fontsize',fontLegend);      
+    yScale = 1;
+    hPlot = plot(numJobs, avgCompTimes, lineWithCircles,'linewidth',LineWidth);       
+    ylim([0 ceil(max(avgCompTimes)/yScale)*yScale]);
+    xlim([0 max(numJobs)]);       
+%     title('Sharing GPU memory 20%');
+    xlabel('Number of jobs/GPU');
+    ylabel(strComplTime);
+    set (gcf, 'Units', 'Inches', 'Position', figSizeOneCol, 'PaperUnits', 'inches', 'PaperPosition', figSizeOneCol);      
+    if is_printed   
+      figIdx=figIdx +1;
+      fileNames{figIdx} = ['jobsPerGPU'];        
       epsFile = [ LOCAL_FIG fileNames{figIdx} '.eps'];
       print ('-depsc', epsFile);
     end
