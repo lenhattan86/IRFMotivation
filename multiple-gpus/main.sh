@@ -9,6 +9,10 @@ then
   done	
 fi
 
+mkdir logs
+mkdir time
+
+
 if [ -z "$1" ]
 then
   numberOfJobs=3

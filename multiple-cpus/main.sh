@@ -9,6 +9,9 @@ then
   done	
 fi
 
+mkdir logs
+mkdir time
+
 if [ -z "$1" ]
 then
   numberOfCores=3
