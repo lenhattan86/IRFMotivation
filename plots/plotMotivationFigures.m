@@ -45,8 +45,8 @@ if plots(2)
   % job ~ 27 secs
   % container&pod: 10 secs
   % Tensorflow initialization: 1.5 mins
-    avgCompTimes = [29661 12481 11304 11454 11551] - 90; % 90 is the overhead of creating pod & containers
-    gpus = [1 4 8 12 16];
+%     gpus = [1 4 8 12 16]; avgCompTimes = [29661 12481 11304 11454 11551] - 90; % 90 is the overhead of creating pod & containers
+    gpus = 1:16; avgCompTimes = [13470.2084558 4477.23197985 3121.00815487 2354.038589 1905.38305998 1649.93166399 1428.36598802 1256.65069079 1149.84947181 1016.70234394 945.18821907 891.494543076 841.729991913 789.562747955 787.856372118 725.062942028];
     figure;
 %   title([method '- CPUs'],'fontsize',fontLegend);      
 
@@ -83,7 +83,6 @@ if plots(3)
 %     avgCompTimes = [9.9 9.77 9.98 10.036];  gpus = [0.3 0.5 0.8 1.0]; % 0.1 : out of memory
     
     figure;
-%   title([method '- CPUs'],'fontsize',fontLegend);      
     yScale = 1;
     hPlot = plot(gpus, avgCompTimes, lineWithCircles,'linewidth',LineWidth);       
     ylim([0 ceil(max(avgCompTimes)/yScale)*yScale]);
@@ -103,7 +102,7 @@ end
 
 if plots(4)
     % VGG16: batch size = 16
-    avgCompTimes = [15.05 33.04 48.06 59.45];  numJobs = [1 2 3 4]; % 0.1 : out of memory
+    avgCompTimes = [15.05 33.04 48.06 59.45]; numJobs = [1 2 3 4]; % 0.1 : out of memory
     
     figure;
 %   title([method '- CPUs'],'fontsize',fontLegend);      
@@ -126,10 +125,9 @@ end
 %%
 
 fileNames
-%%
-return;
-%%
 
+return
+%%
 for i=1:length(fileNames)
     fileName = fileNames{i};
     epsFile = [ LOCAL_FIG fileName '.eps'];

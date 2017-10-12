@@ -66,3 +66,5 @@ for server in $slavesIP; do
 done
 wait
 
+# https://kukulinski.com/10-most-common-reasons-kubernetes-deployments-fail-part-1/
+

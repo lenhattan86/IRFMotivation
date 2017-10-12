@@ -14,31 +14,38 @@ mkdir time
 
 if [ -z "$1" ]
 then
-  numberOfCores=3
+  numberOfCoresStart=1
 else
-  numberOfCores=$1
+  numberOfCoresStart=$1
 fi
+if [ -z "$2" ]
+then
+  numberOfCoreEnd=3
+else
+  numberOfCoreEnd=$2
+fi
+
 #FULL_COMMAND="kubectl --namespace=\"user1\" create -f ./jobs/vgg-gpu-job.yaml"
 
 job="vgg16"
 #job="alexnet"
 jobName="$job-cpu-job"
 
-for i in `seq 1 $numberOfCores`;
+for i in $(seq $numberOfCoresStart $numberOfCoreEnd);
 do  
     # create new jobs
     echo "apiVersion: v1
 kind: Pod
 metadata:
-  name: tensorflow-$job-gpu$i
+  name: tensorflow-$job-cpu$i
 spec:
   containers:
-  - name: tensorflow-$job-gpu
+  - name: tensorflow-$job-cpu
     image: swiftdiaries/bench
     command:
     - \"/bin/bash\"
     - \"-c\"
-    - \"python tf_cnn_benchmarks.py --device=cpu --model=$job --data_format=NHWC --batch_size=32\"  
+    - \"python tf_cnn_benchmarks.py --device=cpu --model=$job --data_format=NHWC --batch_size=16 --num_intra_threads=$i --num_batches=1000\"  
     resources:
       requests:
         alpha.kubernetes.io/nvidia-gpu: 1
