@@ -9,12 +9,14 @@
 #done	
 #wait
 
+#cp ~/.ssh/config.chameleon ~/.ssh/config;  005b93.59de673135d75968
+
 echo "This file need to be executed on the master node instead of your local machine for chameleon"
 echo "You also need to provide the chameleon.pem file"
 
-master="p-100";
+master="gpus-1";
 masterIP="129.114.109.88";
-slavesIP="10.40.0.158 10.40.0.159 10.40.0.160 10.40.0.161"
+slavesIP="10.40.0.231 10.40.0.232 10.40.0.233"
 slaves=""
 servers="$master $slaves";
 serversIP="$masterIP $slavesIP";

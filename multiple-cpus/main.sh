@@ -25,10 +25,19 @@ else
   numberOfCoreEnd=$2
 fi
 
+
 #FULL_COMMAND="kubectl --namespace=\"user1\" create -f ./jobs/vgg-gpu-job.yaml"
 
-job="vgg16"
-#job="alexnet"
+if [ -z "$3" ]
+then
+  job="vgg16"
+  #job="alexnet"
+  #job="resnet50"
+  #job="inception3"
+else
+  job="$3"
+fi
+
 jobName="$job-cpu-job"
 
 for i in $(seq $numberOfCoresStart $numberOfCoreEnd);
@@ -86,4 +95,3 @@ spec:
     >&2 echo "Starting job $i."
 	  (TIMEFORMAT='%R'; time $FULL_COMMAND 2>./logs/application$i.log) 2> ./time/$i.time &
 done
-wait

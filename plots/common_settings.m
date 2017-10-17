@@ -62,7 +62,11 @@ strGpus = 'GPUs';
 strCpuCores = 'CPU cores';
 strMakepan = 'makespan (mins)';
 strGpuMem = 'GPU memory fraction';
-strComplTime = 'compl. time (seconds)';
+strComplTime = 'avg. compl. time (seconds)';
+strGpuShare = 'GPU share (%)';
+
+strCpuSpeedup = 'speed up rate vs 1 cpu';
+strGpuSpeedup = 'speed up rave vs 1 gpu';
 
 %% line specs
 lineProposed = '-';

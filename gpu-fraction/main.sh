@@ -26,10 +26,17 @@ else
   gpu_fraction=$2
 fi
 
+if [ -z "$3" ]
+then
+  #job="vgg16"
+  job="alexnet"
+else
+  job="$3"
+fi
+
 #FULL_COMMAND="kubectl --namespace=\"user1\" create -f ./jobs/vgg-gpu-job.yaml"
 
-job="vgg16"
-#job="alexnet"
+
 jobName="$job-cpu-job"
 
 singleCmd="python tf_cnn_benchmarks.py --device=gpu --model=$job --data_format=NHWC --batch_size=16 --num_batches=1000 --gpu_mem_fraction=$gpu_fraction"
@@ -39,7 +46,7 @@ do
   COMMAND="$COMMAND & $singleCmd"
 #  COMMAND="$singleCmd"
 done
-COMMAND="$COMMAND; wait"
+#COMMAND="$COMMAND"
 #echo $COMMAND
 
 # create new jobs
