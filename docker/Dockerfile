@@ -17,7 +17,7 @@ ENV LD_LIBRARY_PATH /usr/local/nvidia${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 ENV LD_LIBRARY_PATH /usr/local/cuda-8.0/targets/x86_64-linux/lib/stubs${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
-WORKDIR "/benchmarks/scripts/tf_cnn_benchmarks"
+WORKDIR "/benchmarks/scripts/tf_benchmarks"
 
 CMD exec /bin/bash -c "ls"
 
