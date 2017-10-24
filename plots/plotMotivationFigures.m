@@ -8,7 +8,7 @@ fig_path = ['../../IRF/figs/'];
 
 plots = [true true true true];
 
-figureSize = [1 1 4/5 4/5].* figSizeOneCol;
+figureSize = figSizeSquare;
 legendSize = [1 1 4/5 1] .* legendSize;
 
 % overheads:
@@ -19,18 +19,25 @@ if plots(1)
   % job ~ 27 secs
   % container&pod: 10 secs
   % Tensorflow initialization: 1.5 mins
-    avgCompTimes = [7825 3912 2608 1956]/60;
+    avgCompTimesVgg16 = [7825 3912 2608 1956]/60;
+    
+    avgCompTimesAlexnet=  [5564 2792 1884 1351]/60;
+    
     gpus = [2 4 6 8];
     figure;
 %   title([method '- CPUs'],'fontsize',fontLegend);      
 
-    hPlot = plot(gpus, avgCompTimes, lineWithCircles,'linewidth',LineWidth);       
-    ylim([0 ceil(max(avgCompTimes)/yScale)*yScale]);
-    xlim([0 max(gpus)]);       
+    plot(gpus, avgCompTimesAlexnet(1)./avgCompTimesAlexnet, lineWithCircles,'linewidth',LineWidth);
+    hold on;
+    hPlot = plot(gpus, avgCompTimesVgg16(1)./avgCompTimesVgg16, lineWithCircles,'linewidth',LineWidth);          
     
-    xlabel(strGpus);
-    ylabel(strMakepan);
-    set (gcf, 'Units', 'Inches', 'Position', figSizeOneCol, 'PaperUnits', 'inches', 'PaperPosition', figSizeOneCol);
+    legend({'Alexnet','VGG16'},'Location','northwest','FontSize',fontLegend);     
+    
+    xlim([2 max(gpus)]);       
+    
+    xlabel('number of GPUs', 'FontSize',fontAxis);
+    ylabel('speedup rate','FontSize',fontAxis);
+    set (gcf, 'Units', 'Inches', 'Position', figureSize, 'PaperUnits', 'inches', 'PaperPosition', figureSize);
     if is_printed
       figIdx=figIdx +1;
       fileNames{figIdx} = ['multiGpus'];        
@@ -38,7 +45,7 @@ if plots(1)
       print ('-depsc', epsFile);
     end
 end
-
+%%
 if plots(2)    
   figure;
   yScale=100;
@@ -49,26 +56,27 @@ if plots(2)
     gpus = 1:16; 
     avgCompTimesVgg16 = [13470.2084558 4477.23197985 3121.00815487 2354.038589 1905.38305998 1649.93166399 1428.36598802 1256.65069079 1149.84947181 1016.70234394 945.18821907 891.494543076 841.729991913 789.562747955 787.856372118 725.062942028];
     avgCompTimesAlexnet= [779.599501848 256.972734928 190.229606152 153.816900015 118.416475058 98.0824620724 89.83385396 80.2840998173 75.8588907719 63.7092180252 62.4828259945 55.936978817 56.9669809341 53.1801769733 52.4265050888 52.695677042]*10;
-%     avgCompTimesInception3 = [13470.2084558 4477.23197985 3121.00815487 2354.038589 1905.38305998 1649.93166399 1428.36598802 1256.65069079 1149.84947181 1016.70234394 945.18821907 891.494543076 841.729991913 789.562747955 787.856372118 725.062942028];
+    avgCompTimesInception3 = [67149 23739.132509 17546.838275 12695.951973 10343.7046371 8767.93623996 7890.0594449 7157.99404001 6227.78157997 5943.72728205 5457.38579893  5358.01161313  5003.74721479 4877.29865718 4707.582726 4624.07803512];
     avgCompTimesResnet50 = [57944.2923779 17944.2923779 13065.8001668 9470.906322 8367.33240294 6797.86065102 6476.68119597 5376.67561388 5336.14500403 4765.05725598 4234.50606394 3936.25947809 4063.55099392 4028.15193915 3784.55199099 3744.38619113];
     
 %   title([method '- CPUs'],'fontsize',fontLegend);      
 
-    hPlot = plot(gpus,avgCompTimesVgg16(1)./ avgCompTimesVgg16, lineWithCircles,'linewidth',LineWidth);      
+    
+    plot(gpus, avgCompTimesAlexnet(1)./avgCompTimesAlexnet, lineWithPlus,'linewidth',LineWidth);         
     hold on; 
-    plot(gpus, avgCompTimesAlexnet(1)./avgCompTimesAlexnet, lineWithCircles,'linewidth',LineWidth);     
-%     hold on;
-%     plot(gpus, avgCompTimesInception3, lineWithCircles,'linewidth',LineWidth);      
+    plot(gpus, avgCompTimesInception3(1)./avgCompTimesInception3, LineDotted,'linewidth',LineWidth); 
     hold on;
-    plot(gpus, avgCompTimesResnet50(1)./avgCompTimesResnet50, lineWithCircles,'linewidth',LineWidth);      
+    plot(gpus, avgCompTimesResnet50(1)./avgCompTimesResnet50, lineWithDot,'linewidth',LineWidth);      
+    hold on;
+    hPlot = plot(gpus,avgCompTimesVgg16(1)./ avgCompTimesVgg16, lineWithCircles,'linewidth',LineWidth);               
     
-    legend({'VGG16', 'Alexnet', 'Resnet50', 'Inception3'});
+    legend({'Alexnet','Inception3', 'Resnet50', 'VGG16'},'Location','northwest','FontSize',fontLegend);
 %     ylim([0 ceil(max(avgCompTimes)/yScale)*yScale]);
-    xlim([0 max(gpus)]);
+    xlim([1 12]);
     
-    xlabel(strCpuCores);
-    ylabel(strCpuSpeedup);
-    set (gcf, 'Units', 'Inches', 'Position', figSizeOneCol, 'PaperUnits', 'inches', 'PaperPosition', figSizeOneCol);      
+    xlabel(strCpuCores,'FontSize',fontAxis);
+    ylabel('speedup rate','FontSize',fontAxis);
+    set (gcf, 'Units', 'Inches', 'Position', figureSize, 'PaperUnits', 'inches', 'PaperPosition', figureSize);      
     if is_printed   
       figIdx=figIdx +1;
       fileNames{figIdx} = ['cpuCores'];        
@@ -99,21 +107,22 @@ if plots(3)
     avgCompTimesInception3 = [800 639.001741886 437.349575043 200.931766987 ]; total = 100; gpus = [total/4 total/3 total/2 total];
     figure;
     yScale = 1;
-    plot(gpus, avgCompTimesVgg16(length(avgCompTimesVgg16))./avgCompTimesVgg16, lineWithCircles,'linewidth',LineWidth);       
+    plot(gpus, avgCompTimesAlexnet(length(avgCompTimesAlexnet))./avgCompTimesAlexnet, lineWithPlus,'linewidth',LineWidth);    
+    hold on;     
+    plot(gpus, avgCompTimesInception3(length(avgCompTimesInception3))./avgCompTimesInception3, LineDotted,'linewidth',LineWidth); 
+    hold on;     
+    plot(gpus, avgCompTimesresnet50(length(avgCompTimesresnet50))./avgCompTimesresnet50, lineWithDot,'linewidth',LineWidth); 
     hold on; 
-    plot(gpus, avgCompTimesAlexnet(length(avgCompTimesAlexnet))./avgCompTimesAlexnet, lineWithCircles,'linewidth',LineWidth);    
-    hold on; 
-    plot(gpus, avgCompTimesresnet50(length(avgCompTimesresnet50))./avgCompTimesresnet50, lineWithCircles,'linewidth',LineWidth); 
-    hold on; 
-    plot(gpus, avgCompTimesInception3(length(avgCompTimesInception3))./avgCompTimesInception3, lineWithCircles,'linewidth',LineWidth); 
+    plot(gpus, avgCompTimesVgg16(length(avgCompTimesVgg16))./avgCompTimesVgg16, lineWithCircles,'linewidth',LineWidth);           
     
-    legend({'VGG16', 'Alexnet', 'Resnet50', 'Inception3'});
+    
+    legend({ 'Alexnet','Inception3', 'Resnet50', 'VGG16'},'Location','southeast','FontSize',fontLegend);     
     %ylim([0 ceil(max(avgCompTimes)/yScale)*yScale]);
-    xlim([0 max(gpus)]);       
+    xlim([25 max(gpus)]);       
     
-    xlabel(strGpuShare);
-    ylabel(strGpuSpeedup);
-    set (gcf, 'Units', 'Inches', 'Position', figSizeOneCol, 'PaperUnits', 'inches', 'PaperPosition', figSizeOneCol);      
+    xlabel(strGpuShare,'FontSize',fontAxis);
+    ylabel('speedup rate','FontSize',fontAxis);
+    set (gcf, 'Units', 'Inches', 'Position', figureSize, 'PaperUnits', 'inches', 'PaperPosition', figureSize);      
     if is_printed   
       figIdx=figIdx +1;
       fileNames{figIdx} = ['gpuMemoryFraction'];        
@@ -123,20 +132,20 @@ if plots(3)
 end
 
 
-if plots(4)
+if false
     % VGG16: batch size = 16
-    avgCompTimes = [15.05 33.04 48.06 59.45]; numJobs = [1 2 3 4]; % 0.1 : out of memory
+    avgCompTimesVgg16 = [15.05 33.04 48.06 59.45]; numJobs = [1 2 3 4]; % 0.1 : out of memory
     
     figure;
 %   title([method '- CPUs'],'fontsize',fontLegend);      
     yScale = 1;
-    hPlot = plot(numJobs, avgCompTimes, lineWithCircles,'linewidth',LineWidth);       
+    hPlot = plot(numJobs, avgCompTimesVgg16, lineWithCircles,'linewidth',LineWidth);       
     ylim([0 ceil(max(avgCompTimes)/yScale)*yScale]);
     xlim([0 max(numJobs)]);       
 %     title('Sharing GPU memory 20%');
-    xlabel('Number of jobs/GPU');
-    ylabel(strComplTime);
-    set (gcf, 'Units', 'Inches', 'Position', figSizeOneCol, 'PaperUnits', 'inches', 'PaperPosition', figSizeOneCol);      
+    xlabel('Number of jobs/GPU','FontSize',fontAxis);
+    ylabel(strComplTime,'FontSize',fontAxis);
+    set (gcf, 'Units', 'Inches', 'Position', figureSize, 'PaperUnits', 'inches', 'PaperPosition', figureSize);      
     if is_printed   
       figIdx=figIdx +1;
       fileNames{figIdx} = ['jobsPerGPU'];        
