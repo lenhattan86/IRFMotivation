@@ -11,6 +11,7 @@ then
 fi
 
 mkdir logs
+mkdir time
 
 ## manual playing jobs
 
