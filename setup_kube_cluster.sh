@@ -15,8 +15,8 @@ echo "This file need to be executed on the master node instead of your local mac
 echo "You also need to provide the chameleon.pem file"
 
 master="gpus-1";
-masterIP="129.114.109.88";
-slavesIP="10.40.0.231 10.40.0.232 10.40.0.233"
+masterIP="129.114.108.159";
+slavesIP="10.40.1.234 10.40.1.235 10.40.1.236"
 slaves=""
 servers="$master $slaves";
 serversIP="$masterIP $slavesIP";

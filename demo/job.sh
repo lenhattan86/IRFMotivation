@@ -24,7 +24,7 @@ fi
 echo "apiVersion: v1
 kind: Pod
 metadata:
-  name: tensorflow-$job-gpu$i
+  name: $podname
 spec:
   containers:
   - name: $podname
