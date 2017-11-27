@@ -71,4 +71,4 @@ spec:
     
 FULL_COMMAND="kubectl --namespace=\"$username\" create -f ./jobs/$podname.yaml"        
 >&2 echo "Starting pod $podname."
-echo $FULL_COMMAND
+$FULL_COMMAND
