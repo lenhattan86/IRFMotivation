@@ -71,4 +71,5 @@ spec:
     
 FULL_COMMAND="kubectl --namespace=\"$username\" create -f ./jobs/$podname.yaml"        
 >&2 echo "Starting pod $podname."
+echo $FULL_COMMAND
 (TIMEFORMAT='%R'; time $FULL_COMMAND 2>./logs/$podname.log) 2> ./time/$podname.time
