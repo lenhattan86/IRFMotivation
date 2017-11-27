@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59ead1f2-767f-4f01-af21-eee3db5bc6ae" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plots/plotMultipleGpus.m" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/multiple-cpus/main.sh" afterPath="$PROJECT_DIR$/multiple-cpus/main.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/multiple-gpus/main.sh" afterPath="$PROJECT_DIR$/multiple-gpus/main.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plots/figs/cpuCores.eps" afterPath="$PROJECT_DIR$/plots/figs/cpuCores.eps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plots/figs/gpuMemoryFraction.eps" afterPath="$PROJECT_DIR$/plots/figs/gpuMemoryFraction.eps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plots/figs/jobsPerGPU.eps" afterPath="$PROJECT_DIR$/plots/figs/jobsPerGPU.eps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plots/figs/multiGpus.eps" afterPath="$PROJECT_DIR$/plots/figs/multiGpus.eps" />
-    </list>
+    <list default="true" id="59ead1f2-767f-4f01-af21-eee3db5bc6ae" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +17,8 @@
       <file leaf-file-name="main.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/multiple-gpus/main.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="42" column="14" lean-forward="true" selection-start-line="41" selection-start-column="61" selection-end-line="76" selection-end-column="4" />
+            <state relative-caret-position="534">
+              <caret line="69" column="48" lean-forward="true" selection-start-line="69" selection-start-column="48" selection-end-line="69" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -78,20 +70,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IRFMotivation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IRFMotivation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiple-gpus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -140,8 +118,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/multiple-gpus/main.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="42" column="14" lean-forward="true" selection-start-line="41" selection-start-column="61" selection-end-line="76" selection-end-column="4" />
+        <state relative-caret-position="534">
+          <caret line="69" column="48" lean-forward="true" selection-start-line="69" selection-start-column="48" selection-end-line="69" selection-end-column="48" />
           <folding />
         </state>
       </provider>
